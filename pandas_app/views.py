@@ -37,7 +37,7 @@ class Chap07(View):
     # CSVデータの読み込み方法
     def csv_read(self, request, *args, **kwargs):
         df = pd.read_csv(f"{self.dir}Chapter7_1.csv")
-        pre = df.to_string()
+        pre = f"{df}"
         context = { 'pre': pre }
         return render(request, self.template, context)
     
@@ -55,7 +55,7 @@ class Chap07(View):
     # Excelファイルの読み込み方法
     def excel_read(self, request, *args, **kwargs):
         df = pd.read_excel(f"{self.dir}Chapter7_3.xlsx")
-        pre = df.to_string()
+        pre = f"{df}"
         context = { 'pre': pre }
         return render(request, self.template, context)
     
@@ -80,7 +80,7 @@ class Chap07(View):
             '英語': ['apple', 'grape', 'lemon']
         })
         filter = df[(df['ID'] >= 2)]
-        pre = filter.to_string()
+        pre = f"{filter}"
         context = { 'pre': pre }
         return render(request, self.template, context)
     
@@ -108,7 +108,7 @@ class Chap07(View):
         def transform(cost):
             return cost * 10
         transform_result= df['値段'].apply(transform)
-        pre = transform_result.to_string()
+        pre = f"{transform_result}"
         context = { 'pre': pre }
         return render(request, self.template, context)
 
@@ -142,7 +142,7 @@ class Chap08(View):
     def data_iloc(self, request, *args, **kwargs):
         df = pd.read_csv(f"{self.dir}Chapter7_1.csv")
         df2 = df.iloc[1:3, [0, 2]]
-        pre = df2.to_string()
+        pre = f"{df2}"
         context = { 'pre': pre }
         return render(request, self.template, context)
     
@@ -152,11 +152,11 @@ class Chap08(View):
             'ID': ['1', '2', '3'],
             'point': ['80', '90', '70']
         })
-        pre = df.dtypes.to_string()
+        pre = f"{df.dtypes}"
         pre += "\n---------------------\n"
 
         df['point'] = pd.to_numeric(df['point'])
-        pre += df.dtypes.to_string()
+        pre += f"{df.dtypes}"
         context = { 'pre': pre }
         return render(request, self.template, context)
     
