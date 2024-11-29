@@ -142,6 +142,8 @@ class Chap08(View):
     def data_iloc(self, request, *args, **kwargs):
         df = pd.read_csv(f"{self.dir}Chapter7_1.csv")
         df2 = df.iloc[1:3, [0, 2]]
+
+        # コンテキスト
         pre = f"{df2}"
         context = { 'pre': pre }
         return render(request, self.template, context)
@@ -156,6 +158,8 @@ class Chap08(View):
         pre += "\n---------------------\n"
 
         df['point'] = pd.to_numeric(df['point'])
+
+        # コンテキスト
         pre += f"{df.dtypes}"
         context = { 'pre': pre }
         return render(request, self.template, context)
@@ -179,6 +183,8 @@ class Chap08(View):
         pre += "to_string()使用後:\n"
         pre += f"{df_string}\n"
         pre += f"{type(df_string)}"
+
+        # コンテキスト
         context = { 'pre': pre }
         return render(request, self.template, context)
     
@@ -189,8 +195,9 @@ class Chap08(View):
             '日本語': ['りんご', 'ぶどう', 'レモン'],
             '英語': ['apple', 'grape', 'lemon']
         })
-
         name_col = df.loc[:, '日本語']
+
+        # コンテキスト
         pre = f"{name_col}"
         context = { 'pre': pre }
         return render(request, self.template, context)
@@ -211,6 +218,7 @@ class Chap08(View):
         else:
             result = pd.concat([df1, df2], axis=1) # 横結合
 
+        # コンテキスト
         pre = f"{result}"
         context = { 'pre': pre }
         return render(request, self.template, context)
