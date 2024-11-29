@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="p-3 mb-3 border border-info">
+  <h4 class="mb-4 text-decoration-underline">12章 openpyxlとpandasで実際にExcelファイルを作成しよう</h4>
+  {% if msg %}
+  <div class="p-2 text-center mb-4 border border-success">
+    <strong>{{ msg }}</strong>
+  </div>
+  {% endif %}
+  <a href='{% url "work-1-2" %}' class='btn btn-primary'>Work(1)(2)</a>
+  <a href='{% url "work-3-4" %}' class='btn btn-primary'>Work(3)(4)</a>
+</section>
+
+{% if pre %}
+<section class="p-3 mb-3 border border-info">
+  <h4 class="mb-4 text-decoration-underline">preタグ処理</h4>
+  <pre style="font-size: 18px;">
+{{ pre|safe }}
+  </pre>
+</section>
+{% endif %}
+<div class="text-end">
+  <a href='{% url "chap12" %}' class="btn btn-info">リセット</a>
+</div>
+{% endblock content %}

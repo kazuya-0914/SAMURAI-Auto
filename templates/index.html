@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="p-4 mb-4 border border-info">
+  <h4 class="mb-3 text-decoration-underline">Excel自動化メニュー</h4>
+  <ul class="list-group">
+    <li class="list-group-item"><a href="{% url 'openpyxl' %}">openpyxl</a></li>
+    <li class="list-group-item"><a href="{% url 'pandas' %}">pandas</a></li>
+    <li class="list-group-item"><a href="{% url 'openpyxl_pandas' %}">openpyxl + pandas</a></li>
+  </ul>
+</section>
+{% endblock content %}

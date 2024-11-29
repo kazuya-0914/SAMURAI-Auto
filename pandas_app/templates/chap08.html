@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="p-3 mb-3 border border-info">
+  <h4 class="mb-4 text-decoration-underline">8章 pandasで型変換やデータフレーム結合をしよう</h4>
+  {% if msg %}
+  <div class="p-2 text-center mb-4 border border-success">
+    <strong>{{ msg }}</strong>
+  </div>
+  {% endif %}
+  <a href='{% url "data_iloc" %}' class='btn btn-primary'>データ指定</a>
+  <a href='{% url "to_numeric" %}' class='btn btn-primary'>データ変換(数値型)</a>
+  <a href='{% url "to_string" %}' class='btn btn-primary'>データ変換(文字列型)</a>
+  <a href='{% url "loc" %}' class='btn btn-primary'>データ選択</a>
+  <a href='{% url "concat" 0 %}' class='btn btn-primary'>データ縦結合</a>
+  <a href='{% url "concat" 1 %}' class='btn btn-primary'>データ横結合</a>
+</section>
+
+{% if pre %}
+<section class="p-3 mb-3 border border-info">
+  <h4 class="mb-4 text-decoration-underline">preタグ処理</h4>
+  <pre style="font-size: 18px;">
+{{ pre|safe }}
+  </pre>
+</section>
+{% endif %}
+
+<div class="text-end">
+  <a href='{% url "chap08" %}' class="btn btn-info">リセット</a>
+</div>
+{% endblock content %}

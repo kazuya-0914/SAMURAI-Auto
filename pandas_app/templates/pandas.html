@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="p-4 mb-4 border border-info">
+  <h4 class="mb-3 text-decoration-underline">pandasメニュー</h4>
+  <ul class="list-group">
+    <li class="list-group-item"><a href="{% url 'chap07' %}">7章 pandasでデータを操作しよう</a></li>
+    <li class="list-group-item"><a href="{% url 'chap08' %}">8章 pandasで型変換やデータフレーム結合をしよう</a></li>
+    <li class="list-group-item"><a href="{% url 'chap09' %}">9章 pandasで実際にExcelファイルに書き出そう</a></li>
+  </ul>
+</section>
+{% endblock content %}

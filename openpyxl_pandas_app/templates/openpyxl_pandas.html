@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="p-4 mb-4 border border-info">
+  <h4 class="mb-3 text-decoration-underline">openpyxl + pandasメニュー</h4>
+  <ul class="list-group">
+    <li class="list-group-item"><a href="{% url 'chap10' %}">10章 データのソートをしよう</a></li>
+    <li class="list-group-item"><a href="{% url 'chap11' %}">11章 データのグループ化とデータフレームの連結をしよう</a></li>
+    <li class="list-group-item"><a href="{% url 'chap12' %}">12章 openpyxlとpandasで実際にExcelファイルを作成しよう</a></li>
+  </ul>
+</section>
+{% endblock content %}

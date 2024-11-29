@@ -1,0 +1,31 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel自動化</title>
+  {% bootstrap_css %}
+</head>
+<body>
+  <div class="container m-auto">
+    <header class="p-4">
+      <h3 class="text-decoration-underline">Excel自動化</h3>
+    </header>
+
+    <main class="p-4 border border-primary">
+      {% block content %}
+      {% endblock content %}  
+    </main>
+
+    <footer class="p-4 text-center">
+      <a href="{% url 'index' %}" class="btn btn-success">メニュー</a>
+      <a href="{% url 'openpyxl' %}" class="btn btn-success">openpyxl</a>
+      <a href="{% url 'pandas' %}" class="btn btn-success">pandas</a>
+      <a href="{% url 'openpyxl_pandas' %}" class="btn btn-success">openpyxl + pandas</a>
+    </footer>
+  </div>
+{% bootstrap_javascript %}
+</body>
+</html>

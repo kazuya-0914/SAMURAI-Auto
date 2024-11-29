@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="p-3 mb-3 border border-info">
+  <h4 class="mb-4 text-decoration-underline">7章 pandasでデータを操作しよう</h4>
+  {% if msg %}
+  <div class="p-2 text-center mb-4 border border-success">
+    <strong>{{ msg }}</strong>
+  </div>
+  {% endif %}
+  <a href='{% url "csv_read" %}' class='btn btn-primary'>CSV読み込み</a>
+  <a href='{% url "csv_write" %}' class='btn btn-primary'>CSV書き込み</a>
+  <a href='{% url "excel_read" %}' class='btn btn-primary'>Excel読み込み</a>
+  <a href='{% url "excel_write" %}' class='btn btn-primary'>Excel書き込み</a>
+  <a href='{% url "data_filter" %}' class='btn btn-primary'>データ抽出</a>
+  <a href='{% url "data_mean" %}' class='btn btn-primary'>データ集計</a>
+  <a href='{% url "data_result" %}' class='btn btn-primary'>データ変換</a>
+</section>
+
+{% if pre %}
+<section class="p-3 mb-3 border border-info">
+  <h4 class="mb-4 text-decoration-underline">preタグ処理</h4>
+  <pre style="font-size: 18px;">
+{{ pre|safe }}
+  </pre>
+</section>
+{% endif %}
+<div class="text-end">
+  <a href='{% url "chap07" %}' class="btn btn-info">リセット</a>
+</div>
+{% endblock content %}

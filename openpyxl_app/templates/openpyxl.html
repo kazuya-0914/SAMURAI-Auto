@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="p-4 mb-4 border border-info">
+  <h4 class="mb-3 text-decoration-underline">2章 openpyxlの基本的な使い方を学ぼう</h4>
+  {% if msg_1 %}
+  <div class="p-2 text-center mb-4 border border-success">
+    <strong>{{ msg_1 }}</strong>
+  </div>
+  {% endif %}
+  <div class="text-center">
+    <a href="{% url 'save' %}" class="me-2 btn btn-primary">保存</a>
+    <a href="{% url 'update' %}" class="me-2 btn btn-primary">更新</a>
+    <a href="{% url 'create' %}" class="me-2 btn btn-primary">作成</a>
+    <a href="{% url 'change-color' %}" class="me-2 btn btn-primary">色の変更</a>
+    <a href="{% url 'change-font' %}" class="me-2 btn btn-primary">フォント変更</a>
+    <a href="{% url 'change-border' %}" class="me-2 btn btn-primary">枠線の設定</a>  
+  </div>
+</section>
+
+<section class="p-4 mb-4 border border-info">
+  <h4 class="mb-3 text-decoration-underline">3章 openpyxlでデータを整形・加工しよう</h4>
+  {% if msg_2 %}
+  <div class="p-2 text-center mb-4 border border-success">
+    <strong>{{ msg_2 }}</strong>
+  </div>
+  {% endif %}
+  <div class="text-center">
+    <a href="{% url 'join' %}" class="me-2 btn btn-primary">結合</a>
+    <a href="{% url 'cancell' %}" class="me-2 btn btn-primary">結合解除</a>
+    <a href="{% url 'insert' %}" class="me-2 btn btn-primary">行を挿入</a>
+    <a href="{% url 'delete_rows' %}" class="me-2 btn btn-primary">行の削除</a>
+    <a href="{% url 'append' %}" class="me-2 btn btn-primary">新しい行を挿入</a>
+    <a href="{% url 'delete_cols' %}" class="me-2 btn btn-primary">列の削除</a>
+    <a href="{% url 'backup' %}" class="me-2 btn btn-primary">バックアップ</a>
+  </div>
+</section>
+
+<section class="p-4 mb-4 border border-info">
+  <h4 class="mb-3 text-decoration-underline">4章 openpyxlでグラフを作成しよう</h4>
+  {% if msg_3 %}
+  <div class="p-2 text-center mb-4 border border-success">
+    <strong>{{ msg_3 }}</strong>
+  </div>
+  {% endif %}
+  <div class="text-center">
+    <a href="{% url 'prepare' %}" class="me-2 btn btn-primary">データ用意</a>
+    <a href="{% url 'line' %}" class="me-2 btn btn-primary">折れ線グラフ</a>
+    <a href="{% url 'bar' %}" class="me-2 btn btn-primary">棒グラフ</a>
+  </div>
+</section>
+
+<section class="p-4 mb-4 border border-info">
+  <h4 class="mb-3 text-decoration-underline">5章 openpyxlで実際にExcelファイルを作成しよう</h4>
+  {% if msg_4 %}
+  <div class="p-2 text-center mb-4 border border-success">
+    <strong>{{ msg_4 }}</strong>
+  </div>
+  {% endif %}
+  <div class="text-center">
+    <a href="{% url 'sales' %}" class="me-2 btn btn-primary">売上表作成</a>
+    <a href="{% url 'sales_bar' %}" class="me-2 btn btn-primary">売上表の棒グラフ</a>
+  </div>
+</section>
+{% endblock content %}
